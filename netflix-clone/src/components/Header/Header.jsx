@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 import netflixlogo from "../../assets/netflix-logo.png";
 import SearchIcon from "@mui/icons-material/Search";
