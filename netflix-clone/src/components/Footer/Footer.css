@@ -8,11 +8,12 @@
   width: 60%;
   /* background-color: red; */
 }
-.footer-icones {
+.footer-icons {
     /* background-color: blue; */
-    width: 12%;
+    width: 10%;
     display: flex;
     justify-content: space-between;
+
     margin-left: 10px;
     color: white;
 }

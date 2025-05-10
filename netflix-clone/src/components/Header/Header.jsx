@@ -12,7 +12,7 @@ function Header() {
         <div className="header-left">
           <ul>
             <li>
-              <img src={netflixlogo} alt="netfloc-logo" />
+              <img src={netflixlogo} alt="netfloc-logo" width="100"/>
             </li>
             <li>Home</li>
             <li>TVShows</li>
