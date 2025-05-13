@@ -20,21 +20,21 @@ function Footer() {
                 <li>Leagal Notice</li>
               </ul>
             </div>
-            <div className="footer-data">
+            <div>
               <ul>
                 <li>Help Center</li>
                 <li>Jobs</li>
                 <li>Cookie Preferences</li>
               </ul>
             </div>
-            <div className="footer-data">
+            <div>
               <ul>
                 <li>Gift Cards</li>
                 <li>Terms of Use</li>
                 <li>Corporate Information</li>
               </ul>
             </div>
-            <div className="footer-data">
+            <div>
               <ul>
                 <li>Media Center</li>
                 <li>Privacy</li>

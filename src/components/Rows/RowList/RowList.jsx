@@ -1,5 +1,4 @@
 import React from "react";
-import "./RowList.css";
 import Row from "../Row/Row";
 import requests from "../../utils/requests";
 function RowList() {

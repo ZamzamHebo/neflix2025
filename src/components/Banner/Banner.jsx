@@ -4,20 +4,20 @@ import requests from "../utils/requests";
 import "./Banner.css";
 
 function Banner() {
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState(null); // Initialize to null
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const request = await axios.get(requests.fetchNetflixOriginals);
-        console.log(requests);
-        setMovie(
-          request.data.results[
-            Math.floor(Math.random() * request.data.results.length)
-          ]
+        const randomIndex = Math.floor(
+          Math.random() * request.data.results.length
         );
+        setMovie(request.data.results[randomIndex]);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching banner data:", error);
+        // Optionally set a default movie or handle the error visually
+        setMovie({});
       }
     };
 
@@ -25,8 +25,13 @@ function Banner() {
   }, []);
 
   const truncate = (string, n) => {
-    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+    return string?.length > n ? string.slice(0, n - 1) + "..." : string;
   };
+
+  // Handle cases where movie data might not be loaded yet
+  if (!movie) {
+    return <div className="banner banner--loading">Loading banner...</div>;
+  }
 
   return (
     <div
@@ -34,7 +39,7 @@ function Banner() {
       style={{
         backgroundSize: "cover",
         backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
-        backgroundPosition: "center",
+        backgroundPosition: "center center", // Added center center for better coverage
         backgroundRepeat: "no-repeat",
       }}
     >
