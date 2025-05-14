@@ -44,10 +44,9 @@
   gap: 20px;
 }
 
-/* Arrow icon toggle for mobile menu (hidden by default on larger screens) */
+/* Arrow icon toggle */
 .dropdown-arrow {
   cursor: pointer;
-  display: none;
 }
 
 /* Mobile dropdown menu style */
@@ -84,8 +83,7 @@
     display: flex; /* Show dropdown if toggled */
   }
 
-  .browse-language,
-  .dropdown-arrow {
+  .browse-language {
     display: block; /* Show on small screens */
   }
 
