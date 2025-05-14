@@ -5,11 +5,11 @@
   color: white;
   object-fit: contain;
   overflow: hidden;
-  margin-bottom: 20px; /* Add some margin below the banner */
+  margin-bottom: 20px; 
 }
 
 .banner--loading {
-  background-color: #111; /* Or any loading background */
+  background-color: #111; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,8 +18,8 @@
 }
 
 .banner_contents {
-  position: absolute; /* Position content over the background */
-  bottom: 0; /* Align content to the bottom */
+  position: absolute; 
+  bottom: 0; 
   left: 30px;
   padding-bottom: 50px; /* Adjust padding for better visual spacing */
   max-width: 50%; /* Limit width of content for readability */
@@ -55,6 +55,7 @@
   cursor: pointer;
   background-color: rgba(51, 51, 51, 0.525);
   transition: background-color 0.3s ease; /* Added transition for hover effect */
+  margin-bottom: 20px;
 }
 
 .play {

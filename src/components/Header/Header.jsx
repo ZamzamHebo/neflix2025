@@ -4,7 +4,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import MenuIcon from "@mui/icons-material/Menu"; // Import the MenuIcon
 import { useState } from "react";
 
 function Header() {
@@ -18,26 +17,29 @@ function Header() {
     <div className="header-outer-container">
       <div className="header-container">
         <div className="header-left">
+          {/* Always visible logo */}
+          <img
+            src={netflixlogo}
+            alt="netflix-logo"
+            width="100px"
+            className="netflix-logo"
+          />
+
+          {/* Nav list */}
           <ul
             className={`header-left-list ${
               showMobileMenu ? "mobile-menu-open" : ""
             }`}
           >
-            <li>
-              <img src={netflixlogo} alt="netfloc-logo" width="100px" />
-            </li>
             <li>Home</li>
-            <li>TVShows</li>
+            <li>TV Shows</li>
             <li>Movies</li>
             <li>Latest</li>
-            <li>Mylist</li>
-            <li className="browse-language">Browse by languge</li>
+            <li>My List</li>
+            <li className="browse-language">Browse by language</li>
           </ul>
-          {/* Mobile menu toggle button */}
-          <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-            <MenuIcon />
-          </div>
         </div>
+
         <div className="header-right">
           <ul>
             <li>
@@ -49,7 +51,7 @@ function Header() {
             <li>
               <AccountBoxIcon />
             </li>
-            <li className="dropdown-arrow">
+            <li className="dropdown-arrow" onClick={toggleMobileMenu}>
               <ArrowDropDownIcon />
             </li>
           </ul>

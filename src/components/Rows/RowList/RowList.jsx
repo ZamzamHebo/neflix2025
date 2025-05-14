@@ -4,7 +4,7 @@ import requests from "../../utils/requests";
 function RowList() {
   return (
     <>
-      <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} />
+      <Row title="Popular Movies" fetchUrl={requests.fetchNetflixOriginals} />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated}  />

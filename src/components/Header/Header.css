@@ -1,120 +1,101 @@
 .header-outer-container {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(20, 20, 20);
-    /* background-color: transparent; */
-    height: 10vh;
-    color: white;
-    transition: all 0.5s;
-    transition-timing-function: ease-in;
-    z-index: 1;
-  }
-  
-  .nav-black {
-    background-color: rgb(20, 20, 20);
-  }
-  
-  .header-container {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header-left {
-    display: flex;
-    align-items: center;
-  }
-  
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(20, 20, 20);
+  height: 10vh;
+  color: white;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+}
+
+.header-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.netflix-logo {
+  margin-right: 20px;
+}
+
+/* Default navigation menu (for larger screens) */
+.header-left-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  color: white;
+}
+
+/* Right-side icons */
+.header-right ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+
+/* Arrow icon toggle for mobile menu (hidden by default on larger screens) */
+.dropdown-arrow {
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile dropdown menu style */
+.header-left-list.mobile-menu-open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  background-color: rgb(20, 20, 20);
+  width: 100%;
+  padding: 20px;
+  z-index: 2;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.header-left-list.mobile-menu-open li {
+  margin: 0;
+}
+
+/* Browse by language option (hidden on larger screens by default) */
+.browse-language {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .header-left-list {
-    width: 140%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    color: pointer;
-    gap: 20px; /* Added gap for spacing between left list items */
+    display: none; /* Hide default nav on small screens */
   }
-  
-  .header-left-list li:first-child {
-    margin-right: 0; /* Removed redundant margin */
-  }
-  
-  .header-right ul {
-    width: 150%;
-    display: flex;
-    justify-content: space-between;
-    color: pointer;
-    list-style: none;
-    gap: 20px; /* Added gap for spacing between right list items */
-  }
-  
-  .mobile-menu-toggle {
-    display: none; /* Hide by default on larger screens */
-    cursor: pointer;
-    font-size: 1.5rem; /* Adjust size as needed */
-  }
-  
+
   .header-left-list.mobile-menu-open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 10vh; /* Adjust based on your header height */
-    left: 0;
-    background-color: rgb(20, 20, 20);
-    width: 100%;
-    align-items: flex-start;
-    padding: 20px;
-    z-index: 2; /* Ensure it's above other content */
-    gap: 10px; /* Added gap for spacing in the mobile menu */
+    display: flex; /* Show dropdown if toggled */
   }
-  
-  .header-left-list.mobile-menu-open li {
-    margin: 0; /* Removed redundant margin */
-  }
-  
-  .browse-language {
-    display: block; /* Show on larger screens */
-  }
-  
+
+  .browse-language,
   .dropdown-arrow {
-    display: block; /* Show on larger screens */
+    display: block; /* Show on small screens */
   }
-  
-  /* Media query for phone size (example: max-width: 768px) */
-  @media (max-width: 768px) {
-    .header-left-list {
-      display: none; /* Hide the horizontal list on smaller screens */
-    }
-  
-    .mobile-menu-toggle {
-      display: block; /* Show the menu icon on smaller screens */
-    }
-  
-    .header-right ul {
-      width: auto; /* Adjust width for icons */
-      gap: 15px; /* Adjust gap for icons on smaller screens */
-    }
-  
-    .header-right ul li {
-      margin-left: 0; /* Removed redundant margin */
-    }
-  
-    .browse-language {
-      display: none; /* Hide on smaller screens if needed */
-    }
-  
-    .dropdown-arrow {
-      display: none; /* Hide on smaller screens if needed */
-    }
+
+  .header-right ul {
+    gap: 15px;
   }
-  
-  /* Optional: Adjust styles for very small screens if needed */
-  @media (max-width: 480px) {
-    .header-right ul {
-      gap: 10px;
-    }
+}
+
+@media (max-width: 480px) {
+  .header-right ul {
+    gap: 10px;
   }
+}

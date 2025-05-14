@@ -4,7 +4,7 @@ import requests from "../utils/requests";
 import "./Banner.css";
 
 function Banner() {
-  const [movie, setMovie] = useState(null); // Initialize to null
+  const [movie, setMovie] = useState({}); // Initialize to null
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +16,6 @@ function Banner() {
         setMovie(request.data.results[randomIndex]);
       } catch (error) {
         console.error("Error fetching banner data:", error);
-        // Optionally set a default movie or handle the error visually
         setMovie({});
       }
     };
